@@ -26,3 +26,7 @@ gem 'jquery-rails'
 gem 'turbolinks'
 # Bootstrap
 gem 'bootstrap-sass'
+# Devise
+gem 'devise'
+# Figaro for env variables
+gem  'figaro'

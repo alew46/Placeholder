@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  resources :topics
+
+  resources :bookmarks
+
   devise_for :users, :controllers => { registrations: 'registrations' }
 
   get 'home/index'

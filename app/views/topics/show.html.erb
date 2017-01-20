@@ -10,5 +10,9 @@
   <%= @topic.user %>
 </p>
 
+<%= render @topic.bookmarks %>
+
 <%= link_to 'Edit', edit_topic_path(@topic) %> |
 <%= link_to 'Back', topics_path %>
+
+<%#= f.collection_select :topic_id, Topic.all, :id, :title, prompt: "Please select a topic" %>

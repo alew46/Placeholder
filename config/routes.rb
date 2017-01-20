@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
 
-  resources :topics
-
-  resources :bookmarks
+  resources :topics do
+    resources :bookmarks, except: [:index]
+  end
 
   devise_for :users, :controllers => { registrations: 'registrations' }
 

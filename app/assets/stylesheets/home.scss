@@ -1,3 +1,35 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.ghost-button-transition {
+  display: inline-block;
+  width: 200px;
+  padding: 8px;
+  color: #fff;
+  border: 2px solid #fff;
+  text-align: center;
+  outline: none;
+  text-decoration: none;
+  transition: background-color 0.2s ease-out,
+              color 0.2s ease-out;
+}
+.ghost-button-transition:hover,
+.ghost-button-transition:active {
+  background-color: #fff;
+  color: #000;
+  transition: background-color 0.3s ease-in,
+              color 0.3s ease-in;
+}
+
+#lpheader1 {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  font-size: 55px;
+  color: white;
+}
+
+#lpcolorhero {
+  background-color: "#D9230F";
+  min-height: 100%;
+}

@@ -5,12 +5,12 @@
   <%= @topic.title %>
 </p>
 
-<p>
-  <strong>User:</strong>
-  <%= @topic.user %>
-</p>
-
 <%= render @topic.bookmarks %>
+
+<p>
+  <strong>Add new bookmark</strong>
+</p>
+<%= render partial: 'bookmarks/form', locals: { topic: @topic } %>
 
 <%= link_to 'Edit', edit_topic_path(@topic) %> |
 <%= link_to 'Back', topics_path %>

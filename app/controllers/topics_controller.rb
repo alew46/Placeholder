@@ -8,6 +8,8 @@ class TopicsController < ApplicationController
 
   # GET /topics/1
   def show
+    @topic = Topic.find(params[:id])
+    @bookmark = Bookmark.new 
   end
 
   # GET /topics/new

@@ -7,7 +7,7 @@
       <h4 style="padding-left: 32px; color: white; font-family: 'Roboto', sans-serif; font-size: 20px; font-weight:400; margin-top: 30px;">Bookmarks just got social.</h4>
 
       <div class="row" style="width: 2000px; padding-left:30px; padding-top:20px;">
-          <div class="col-md-1" ><%= button_to "Sign Up", new_user_registration_path, :class => 'ghost-button-transition'  %></div>
+          <div class="col-md-1" ><%= button_to "Sign Up", new_user_registration_path, :method => :get, :class => 'ghost-button-transition'  %></div>
           <div class="col-md-1" ><%= button_to "Sign In", new_user_session_path, :class => 'ghost-button-transition'  %></div>
       </div>
     </div>

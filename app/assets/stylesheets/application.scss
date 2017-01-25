@@ -18,6 +18,7 @@
  @import "bootstrap";
 
  @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,700");
+ @import url("https://fonts.googleapis.com/css?family=Pacifico");
  /*!
   * bootswatch v3.3.7
   * Homepage: http://bootswatch.com
@@ -4295,6 +4296,7 @@
    border-width: 1px 0 0;
  }
  .navbar-brand {
+   font-family: 'Pacifico', cursive;
    float: left;
    padding: 11px 15px;
    font-size: 17px;

@@ -30,3 +30,5 @@ gem 'bootstrap-sass'
 gem 'devise'
 # Figaro for env variables
 gem  'figaro'
+# LinkThumbnailer for website preview images
+gem 'link_thumbnailer'

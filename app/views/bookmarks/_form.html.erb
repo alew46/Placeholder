@@ -1,4 +1,4 @@
-<h1>Add a bookmark</h1>
+<h5>Add a bookmark to this Placheolderr</h5>
 
 <%= form_for [@topic, @bookmark] do |f| %>
   <% if @bookmark.errors.any? %>
@@ -14,7 +14,6 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :url %><br>
     <%= f.text_field :url, placeholder: "Paste URL here" %>
   </div>
 

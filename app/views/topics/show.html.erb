@@ -1,18 +1,52 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
 
-<p>
-  <strong>Title:</strong>
-  <%= @topic.title %>
-</p>
+  <% def get_host_without_www(url)
+    url = "http://#{url}" if URI.parse(url).scheme.nil?
+    host = URI.parse(url).host.downcase
+    host.start_with?('www.') ? host[4..-1] : host
+  end %>
 
-<%= render @topic.bookmarks %>
+  <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Add new bookmark</strong>
-</p>
+  <h3>
+    <%= @topic.title %>
+  </h3>
 
-<%= render partial: 'bookmarks/form', locals: { topic: @topic, bookmark: @bookmark } %>
+  <div class="row col-md-12 col-sm-12">
+    <% @topic.bookmarks.each do |bookmark| %>
+      <div class="col-md-2 col-sm-2" style="text-align: center;">
+        <div>
+          <% domain = get_host_without_www(bookmark.url) %>
+          <% domain_link = "http://www.#{domain}" %>
+          <% object = LinkThumbnailer.generate(domain_link) %>
+          <img src="<%= object.favicon %>" height = "150px" width="150px">
+        </div>
+        <p><%= domain %></p>
+        <div style="padding-bottom: 8px;">
+          <small>Like | Delete</small>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+  <!-- <div>
+    <table id="table-bookmarks">
+      <tr>
+        <td><%= render @topic.bookmarks %></td>
+      </tr>
+    </table>
+  </div> -->
+
+  <!-- <%= render @topic.bookmarks %> -->
+
+  <br />
+
+<div class="row col-md-12 col-sm-12">
+  <%= render partial: 'bookmarks/form', locals: { topic: @topic, bookmark: @bookmark } %>
+</div>
 
 
-<%= link_to 'Edit', edit_topic_path(@topic) %> |
-<%= link_to 'Back', topics_path %>
+  <!-- <%= link_to 'Edit', edit_topic_path(@topic) %> |
+  <%= link_to 'Back', topics_path %> -->
+
+</div>

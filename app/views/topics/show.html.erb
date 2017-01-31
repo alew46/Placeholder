@@ -4,19 +4,7 @@
     <%= @topic.title %>
   </h3>
 
-  <div class="row col-md-12 col-sm-12">
-    <% @topic.bookmarks.each do |bookmark| %>
-      <div class="col-md-2 col-sm-2" style="text-align: center;">
-        <div>
-          <%= link_to image_tag(bookmark.image_url, class: "bookmark-image"), bookmark.url %>
-        </div>
-        <p><%= bookmark.pretty_url %></p>
-        <div style="padding-bottom: 8px;">
-          <small>Like | <%= link_to 'Delete', bookmark, :method => :delete %></small>
-        </div>
-      </div>
-    <% end %>
-  </div>
+<%= render partial: "bookmarks/bookmark", locals: { topic: @topic } %>
 
   <!-- <div>
     <table id="table-bookmarks">

@@ -1,6 +1,6 @@
 class BookmarksController < ApplicationController
 
-  before_action :set_topic
+  before_action :set_topic, except: [ :destroy ]
 
   def show
     @bookmark = Bookmark.find(params[:id])
@@ -14,11 +14,11 @@ class BookmarksController < ApplicationController
     @bookmark = @topic.bookmarks.new(bookmark_params)
 
     if @bookmark.save
-      flash[:notice] = "Bookmark added to #{@bookmark.topic}!"
-      redirect_to @topic
+      flash[:notice] = "Bookmark added to #{@bookmark.topic.title}!"
+      redirect_to @bookmark.topic
     else
       flash[:alert] = "There was a problem adding this bookmark."
-      redirect_to @topic
+      redirect_to @bookmark.topic
     end
   end
 
@@ -26,10 +26,10 @@ class BookmarksController < ApplicationController
     @bookmark = Bookmark.find(params[:id])
     if @bookmark.destroy
       flash[:notice] = "Bookmark deleted!"
-      redirect_to @topic
+      redirect_to @bookmark.topic
     else
       flash[:alert] = "Unable to delete bookmark. Please try again."
-      redirect_to @topic
+      redirect_to @bookmark.topic
     end
   end
 

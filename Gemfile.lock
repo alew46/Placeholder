@@ -106,6 +106,8 @@ GEM
       ruby-ll (~> 2.1)
     orm_adapter (0.5.0)
     pg (0.19.0)
+    pundit (1.1.0)
+      activesupport (>= 3.0.0)
     rack (1.6.5)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -189,6 +191,7 @@ DEPENDENCIES
   jquery-rails
   link_thumbnailer
   pg
+  pundit
   rails (= 4.2.5)
   rails_12factor
   sass-rails (~> 5.0)

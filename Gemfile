@@ -32,3 +32,5 @@ gem 'devise'
 gem  'figaro'
 # LinkThumbnailer for website preview images
 gem 'link_thumbnailer'
+# Pundit
+gem 'pundit'

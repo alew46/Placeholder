@@ -3,7 +3,7 @@ class TopicsController < ApplicationController
 
   # GET /topics
   def index
-    @topics = Topic.all
+    @topics = current_user.topics
   end
 
   # GET /topics/1

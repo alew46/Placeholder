@@ -3,7 +3,6 @@
 <h1 style="margin-left: 5%;"><%= current_user.first_name %>'s Placeholderrs</h1>
 
         <% @topics.each do |topic| %>
-          <% if topic.user = current_user %>
             <div class = "row col-md-12 col-sm-12" style="margin-left: 5%;">
               <div class = "topic-head">
               <h3><%= link_to "#{topic.title}", topic %><h3>
@@ -26,7 +25,6 @@
               </div>
             </div>
 
-      <% end %>
     <% end %>
 
 <br>

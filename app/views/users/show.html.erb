@@ -1,1 +1,10 @@
 <h1>User Show View</h1>
+
+<h2>My Bookmarks</h2>
+<div class="row col-md-12 col-sm-12">
+  <%= render current_user.bookmarks %>
+</div>
+
+
+<h2>My Likes</h2>
+<%= render current_user.likes.collect(&:bookmark) %>

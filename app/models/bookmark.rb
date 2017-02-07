@@ -1,6 +1,8 @@
 class Bookmark < ActiveRecord::Base
   belongs_to :topic
 
+  has_many :likes, dependent: :destroy
+
   before_save :normalize_url
   after_create :set_image_url
 

@@ -3,27 +3,14 @@
   <h3>
     <%= @topic.title %>
   </h3>
-
-<%= render partial: "bookmarks/bookmark", locals: { topic: @topic } %>
-
-  <!-- <div>
-    <table id="table-bookmarks">
-      <tr>
-        <td><%= render @topic.bookmarks %></td>
-      </tr>
-    </table>
-  </div> -->
-
-  <!-- <%= render @topic.bookmarks %> -->
+  <div class="row col-md-12 col-sm-12">
+    <%= render @topic.bookmarks %>
+  </div>
 
   <br />
 
 <div class="row col-md-12 col-sm-12">
   <%= render partial: 'bookmarks/form', locals: { topic: @topic, bookmark: @bookmark } %>
 </div>
-
-
-  <!-- <%= link_to 'Edit', edit_topic_path(@topic) %> |
-  <%= link_to 'Back', topics_path %> -->
 
 </div>
